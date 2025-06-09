@@ -2,8 +2,9 @@ import os
 import openai
 import telebot
 
-TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")  # Zorg dat deze environment variabele juist staat
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")  # Zorg dat deze environment variabele juist staat
+# Haal je tokens uit environment variables op Render
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 bot = telebot.TeleBot(TELEGRAM_TOKEN)
 openai.api_key = OPENAI_API_KEY
