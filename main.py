@@ -2,6 +2,7 @@ import os
 import openai
 import telebot
 
+# Haal de API-sleutels op uit de omgevingsvariabelen (Render > Environment)
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
