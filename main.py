@@ -2,9 +2,8 @@ import os
 import openai
 import telebot
 
-# Haal de API-sleutels op uit de omgevingsvariabelen (Render > Environment)
-TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")  # Zorg dat deze environment variabele juist staat
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")  # Zorg dat deze environment variabele juist staat
 
 bot = telebot.TeleBot(TELEGRAM_TOKEN)
 openai.api_key = OPENAI_API_KEY
@@ -12,7 +11,7 @@ openai.api_key = OPENAI_API_KEY
 @bot.message_handler(func=lambda message: True)
 def handle_message(message):
     try:
-        response = openai.ChatCompletion.create(
+        response = openai.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[{"role": "user", "content": message.text}]
         )
